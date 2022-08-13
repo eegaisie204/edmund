@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-	<title>Travello</title>
+	<title>GAISIE</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Travello template project">
@@ -284,29 +284,70 @@
 				<div class="row destinations_row">
 					<div class="col">
 						<div class="destinations_container item_grid">
-
-							{% for dest in dests %}
+							
 							<!-- Destination -->
+							{% for dests in dests %}
 							<div class="destination item">
 								<div class="destination_image">
-									<img src="{{dest.img.url}}" alt="">
+									<img src="{{dests.img.url}}" alt="">
 
-									{% if dest.offer %}
+									{% if dests.offer %}
 									<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 									{% endif %}
 								</div>
 								<div class="destination_content">
-									<div class="destination_title"><a href="destinations.html">{{dest.name}}</a>
+									<div class="destination_title"><a href="destinations.html">{{dests.name}}</a>
 									</div>
 									<div class="destination_subtitle">
-										<p>{{dest.desc}}</p>
+										<p>{{dests.desc}}</p>
 									</div>
-									<div class="destination_price">From ${{dest.price}}</div>
+									<div class="destination_price">From ${{dests.price}}</div>
 								</div>
 							</div>
 
 							{% endfor %}
 
+							{% for roc in roc %}
+							<div class="destination item">
+								<div class="destination_image">
+									<img src="{{roc.img.url}}" alt="">
+
+									{% if roc.offer %}
+									<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+									{% endif %}
+								</div>
+								<div class="destination_content">
+									<div class="destination_title"><a href="destinations.html">{{roc.name}}</a>
+									</div>
+									<div class="destination_subtitle">
+										<p>{{roc.desc}}</p>
+									</div>
+									<div class="destination_price">From ${{roc.price}}</div>
+								</div>
+							</div>
+
+							{% endfor %}
+							{% for place in place %}
+							<div class="destination item">
+								<div class="destination_image">
+									<img src="{{place.img.url}}" alt="">
+
+									{% if place.offer %}
+									<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+									{% endif %}
+								</div>
+								<div class="destination_content">
+									<div class="destination_title"><a href="destinations.html">{{place.name}}</a>
+									</div>
+									<div class="destination_subtitle">
+										<p>{{place.desc}}</p>
+									</div>
+									<div class="destination_price">From ${{place.price}}</div>
+								</div>
+							</div>
+
+							{% endfor %}
+							
 						</div>
 					</div>
 				</div>
@@ -391,6 +432,53 @@
 									</div>
 									<div class="news_post_text">
 										<p>{{exp.desc}}</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+
+							<!-- News Post -->
+							{% for xp in xp %}
+							<div
+								class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+								<div class="news_post_image"><img src="{{xp.img.url}}" alt=""></div>
+								<div class="news_post_content">
+									<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+										<div>{{xp.day}}</div>
+										<div>{{xp.month}}</div>
+									</div>
+									<div class="news_post_title"><a href="#">{{xp.title}}</a>
+									</div>
+									<div class="news_post_category">
+										<ul>
+											<li><a href="#">{{xp.subtitle}}</a></li>
+										</ul>
+									</div>
+									<div class="news_post_text">
+										<p>{{xp.desc}}</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+
+							{% for ifem in ifem %}
+							<div
+								class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+								<div class="news_post_image"><img src="{{ifem.img.url}}" alt=""></div>
+								<div class="news_post_content">
+									<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+										<div>{{ifem.day}}</div>
+										<div>{{ifem.month}}</div>
+									</div>
+									<div class="news_post_title"><a href="#">{{ifem.title}}</a>
+									</div>
+									<div class="news_post_category">
+										<ul>
+											<li><a href="#">{{ifem.subtitle}}</a></li>
+										</ul>
+									</div>
+									<div class="news_post_text">
+										<p>{{ifem.desc}}</p>
 									</div>
 								</div>
 							</div>
